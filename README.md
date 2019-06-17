@@ -22,12 +22,13 @@ const uploadFileStat: UploadFileStat | undefined;
 sendBigFile(file).subscribe(
   (stat) => {
     uploadFileStat = stat;
+    console.log(`上传进度: ${((stat.loaded / stat.total) * 100).toFixed(2)}%`);
   },
   (error) => {
     console.log('上传失败');
   },
   () => {
-    console.log('上传成功');
+    console.log(uploadFileStat.success ? '上传成功' : '上传失败');
   },
 );
 ```
