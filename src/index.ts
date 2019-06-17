@@ -1,11 +1,8 @@
-export const PI = 3.14;
+import sendBigFile from './sendBigFile';
+import Options from './Options';
+import defaultApis from './defaultApis';
+import UploadFileStat from './UploadFileStat';
 
-/**
- * 求和
- *
- * @param a 相加的数字
- * @param b 相加的数字
- */
-export function sum(a: number, b: number) {
-  return a + b;
-}
+export default sendBigFile;
+
+export { UploadFileStat, defaultApis, Options };

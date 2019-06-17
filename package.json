@@ -46,7 +46,11 @@
   ],
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "@babel/runtime": "^7.4.5"
+    "@babel/runtime": "^7.4.5",
+    "@sinoui/http": "^0.2.2",
+    "@sinoui/http-send-file": "^0.1.1",
+    "browser-md5-file": "^1.1.1",
+    "rxjs": "^6.5.2"
   },
   "devDependencies": {
     "husky": "^2.4.1",

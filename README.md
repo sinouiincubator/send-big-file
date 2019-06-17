@@ -1,6 +1,36 @@
 # send-big-file
 
-这是由[ts-lib-scripts](https://github.com/sinoui/ts-lib-scripts)创建的TypeScript库项目。
+分片发送大文件。
+
+```shell
+yarn add send-big-file
+```
+
+或者
+
+```shell
+npm i --save send-big-file
+```
+
+例子：
+
+```typescript
+import sendBigFile, { UploadFileStat } from 'send-big-file';
+
+const file: File = ...;
+const uploadFileStat: UploadFileStat | undefined;
+sendBigFile(file).subscribe(
+  (stat) => {
+    uploadFileStat = stat;
+  },
+  (error) => {
+    console.log('上传失败');
+  },
+  () => {
+    console.log('上传成功');
+  },
+);
+```
 
 ## 本地开发
 
