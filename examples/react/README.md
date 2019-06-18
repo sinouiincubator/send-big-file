@@ -8,6 +8,13 @@
 yarn install
 ```
 
+编译 packages/send-big-file 模块：
+
+```shell
+cd packages/send-big-file
+yarn build
+```
+
 ## 启动服务
 
 在 examples/react 目录下执行以下命令：
