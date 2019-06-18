@@ -1,5 +1,6 @@
 # node.js
 node_modules
+examples/react/node_modules
 
 # testing
 coverage
