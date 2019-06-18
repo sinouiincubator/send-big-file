@@ -2,6 +2,8 @@
 
 分片发送大文件。
 
+## 快速安装
+
 ```shell
 yarn add send-big-file
 ```
@@ -12,12 +14,14 @@ yarn add send-big-file
 npm i --save send-big-file
 ```
 
-例子：
+## 快速使用
 
 ```typescript
 import sendBigFile, { UploadFileStat } from 'send-big-file';
 
+// 定义文件
 const file: File = ...;
+// 上传状态
 const uploadFileStat: UploadFileStat | undefined;
 sendBigFile(file).subscribe(
   (stat) => {
@@ -33,30 +37,19 @@ sendBigFile(file).subscribe(
 );
 ```
 
-## 本地开发
+## 参数说明
 
-项目中有以下有用的命令。
+- `file` 要上传的文件
+- `options` 上传配置，主要包括：
 
-### `yarn start`
+  - `concurrent` 并发数目，默认为 10
+  - `chunkSize` 分片大小，以 b 为单位，默认为 2MB
+  - `chunkExists` 检查分片是否已经上传的方法
+  - `sendChunk` 上传分片的方法
+  - `mergeChunks` 合并分片的方法
 
-在开发和监听模式下启动项目。当代码发生变化时就会重新编译代码。它同时会实时地向你汇报项目中的代码错误。
+## 特性
 
-### `yarn build`
-
-打包，并将打包文件放在`dist`文件夹中。使用 rollup 对代码做优化并打包成多种格式（`Common JS`，`UMD`和`ES Module`）。
-
-### `yarn lint`
-
-`yarn lint`会检查整个项目是否有代码错误、风格错误。
-
-开启 vscode 的 eslint、prettier 插件，在使用 vscode 编码时，就会自动修正风格错误、提示语法错误。
-
-### `yarn format`
-
-`yarn format`可以自动调整整个项目的代码风格问题。
-
-### `yarn test`
-
-`yarn test`以监听模式启动 jest，运行单元测试。
-
-开启 vscode 的 jest 插件，会在文件变化时自动运行单元测试。
+- 支持分片并发上传
+- 失败自动重试
+- 断点续传
