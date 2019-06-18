@@ -58,5 +58,8 @@
     "prettier": "^1.18.2",
     "ts-lib-tools": "^0.2.2",
     "typescript": "^3.5.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
