@@ -58,8 +58,8 @@ sendBigFile(file).subscribe(
      */
     function chunkExists(md5: string): Observable<boolean> {
       return from(
-        http.get < { exists: boolean } > `${url}/chunk/${md5}/status`
-      ).pipe(map(result => result.exists));
+        http.get < { exists: boolean } > `${url}/chunk/${md5}/status`,
+      ).pipe(map((result) => result.exists));
     }
     ```
 
@@ -79,14 +79,14 @@ sendBigFile(file).subscribe(
      * @param md5 文件的md5
      */
     function sendChunk(file: Blob, md5: string) {
-      return new Observable<ProgressEvent>(observer => {
-        sendFile(`${url}/chunk/${md5}`, file as File, "file", {
-          onUploadProgress: event => observer.next(event)
+      return new Observable<ProgressEvent>((observer) => {
+        sendFile(`${url}/chunk/${md5}`, file as File, 'file', {
+          onUploadProgress: (event) => observer.next(event),
         })
           .then(() => {
             observer.complete();
           })
-          .catch(error => {
+          .catch((error) => {
             observer.error(error);
           });
       });
@@ -110,13 +110,13 @@ sendBigFile(file).subscribe(
      * @returns {Observable<string>}
      */
     function mergeChunks(_file: File, chunks: string[]): Observable<string> {
-      return new Observable<string>(observer => {
+      return new Observable<string>((observer) => {
         http.post<{ fileId: string }>(`${baseUrl}/merge`, chunks).then(
-          result => {
+          (result) => {
             observer.next(result.fileId);
             observer.complete();
           },
-          error => observer.error(error)
+          (error) => observer.error(error),
         );
       });
     }
