@@ -8,6 +8,7 @@
     "browser-md5-file": "^1.1.1",
     "express": "^4.17.1",
     "fs-extra": "^8.0.1",
+    "rc-progress": "^2.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-dropzone": "^10.1.5",

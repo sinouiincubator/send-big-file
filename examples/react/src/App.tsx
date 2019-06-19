@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import sendBigFile from "send-big-file";
+import { Line } from "rc-progress";
+// import "rc-progress/assets/index.css";
 
 const UNITS = ["b", "kb", "mb", "gb"];
 
@@ -51,15 +53,30 @@ function App() {
             已解析出md5的区块数目：
             {fileUploadStat.chunks.filter(Boolean).length}
           </div>
-          <div>
-            MD5解析进度：
+          <div style={{ width: 360 }}>
+            MD5解析进度(
             {(fileUploadStat.chunks.filter(Boolean).length /
               Math.ceil(fileUploadStat.total / (2 * 1024 * 1024))) *
               100}
-            %
+            %)
+            <Line
+              percent={
+                (fileUploadStat.chunks.filter(Boolean).length /
+                  Math.ceil(fileUploadStat.total / (2 * 1024 * 1024))) *
+                100
+              }
+              strokeColor="#3FC7FA"
+              strokeWidth={2}
+            />
           </div>
-          <div>
-            上传进度：{(fileUploadStat.loaded / fileUploadStat.total) * 100}%
+
+          <div style={{ width: 360 }}>
+            上传进度({(fileUploadStat.loaded / fileUploadStat.total) * 100}%)
+            <Line
+              percent={(fileUploadStat.loaded / fileUploadStat.total) * 100}
+              strokeColor="#3FC7FA"
+              strokeWidth={2}
+            />
           </div>
           <div>
             上传状态：{fileUploadStat.completed ? "已结束上传" : "上传中"}
