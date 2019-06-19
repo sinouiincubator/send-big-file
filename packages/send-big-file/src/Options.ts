@@ -12,6 +12,8 @@ export default interface Options {
   /**
    * 检查分片是否已经上传
    * @param chunkMd5 分片的md5
+   *
+   * @returns 返回是否分片上传的状态。如果存在则返回true，否则返回false。
    */
   chunkExists(chunkMd5: string): Observable<boolean>;
 
@@ -20,6 +22,8 @@ export default interface Options {
    *
    * @param chunk 分片内容
    * @param chunkMd5 分片的md5
+   *
+   * @returns 返回分片上传进度。
    */
   sendChunk(chunk: Blob, chunkMd5: string): Observable<ProgressEvent>;
 

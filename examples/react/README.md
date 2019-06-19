@@ -12,12 +12,11 @@ yarn install
 
 ```shell
 cd packages/send-big-file
+yarn install
 yarn build
 ```
 
 ## 启动服务
-
-在 examples/react 目录下执行以下命令：
 
 ```shell
 node server.js
