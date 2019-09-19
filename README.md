@@ -1,5 +1,8 @@
 # send-big-file
 
+[![npm version](https://img.shields.io/npm/v/send-big-file)](https://www.npmjs.com/package/send-big-file)
+[![downloads](https://img.shields.io/npm/dm/send-big-file)](https://www.npmjs.com/package/send-big-file)
+
 分片发送大文件。
 
 ## 特性

@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
-  "umd:main": "dist/send-big-file.umd.production.js",
-  "module": "dist/send-big-file.es.production.js",
+  "module": "dist/send-big-file.esm.js",
   "typings": "dist/index.d.ts",
+  "homepage": "https://sinouiincubator.github.io/send-big-file/",
+  "bugs": {
+    "url": "https://github.com/sinouiincubator/send-big-file/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinouiincubator/send-big-file.git"
+  },
   "scripts": {
     "start": "ts-lib-tools watch",
     "test": "ts-lib-tools test",
@@ -45,19 +52,19 @@
     "assets"
   ],
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
-    "@babel/runtime": "^7.4.5",
-    "@sinoui/http": "^0.2.2",
-    "@sinoui/http-send-file": "^0.1.1",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/runtime": "^7.6.0",
+    "@sinoui/http": "^1.0.0",
+    "@sinoui/http-send-file": "^1.0.0",
     "browser-md5-file": "^1.1.1",
-    "rxjs": "^6.5.2"
+    "rxjs": "^6.5.3"
   },
   "devDependencies": {
-    "husky": "^2.4.1",
-    "lint-staged": "^8.2.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
-    "ts-lib-tools": "^0.2.2",
-    "typescript": "^3.5.2"
+    "ts-lib-tools": "^0.4.7",
+    "typescript": "^3.6.3"
   },
   "publishConfig": {
     "access": "public"
